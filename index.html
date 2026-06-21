@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1f9d45" />
+    <meta name="description" content="Локальный checklist закупок для дня рождения." />
+    <title>Birthday Checklist</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-labelledby="app-title">
+      <header class="app-header">
+        <div class="title-row">
+          <div>
+            <h1 id="app-title">Birthday Checklist</h1>
+            <p>15 человек + ребёнок</p>
+          </div>
+          <div class="header-actions" aria-label="Действия со списком">
+            <button class="icon-button danger" id="reset-button" type="button" aria-label="Сбросить отметки">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M20 6v5h-5" />
+                <path d="M19.2 15a7.5 7.5 0 1 1-1.7-8.1L20 11" />
+              </svg>
+            </button>
+            <button class="icon-button success" id="share-button" type="button" aria-label="Поделиться оставшимся списком">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M12 3v12" />
+                <path d="m7 8 5-5 5 5" />
+                <path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <section class="progress-panel" aria-live="polite">
+          <div class="progress-meta">
+            <span><strong id="checked-count">0</strong> из <span id="total-count">0</span> куплено</span>
+            <strong id="progress-percent">0%</strong>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+        </section>
+      </header>
+
+      <section class="list-area" id="list-area" aria-label="Список покупок"></section>
+
+      <p class="empty-state" id="empty-state" hidden>Нет позиций для выбранного фильтра.</p>
+
+      <nav class="filter-bar" aria-label="Фильтр списка">
+        <button class="filter-button active" type="button" data-filter="all">Все</button>
+        <button class="filter-button" type="button" data-filter="remaining">Осталось</button>
+        <button class="filter-button" type="button" data-filter="done">Куплено</button>
+      </nav>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

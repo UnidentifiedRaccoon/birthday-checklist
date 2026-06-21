@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Birthday Checklist icon</title>
+  <desc id="desc">Green checklist icon with a small birthday accent.</desc>
+  <rect width="512" height="512" rx="112" fill="#1f9d45" />
+  <path
+    d="M151 267.5 220.2 337 367 176"
+    fill="none"
+    stroke="#fff"
+    stroke-width="47"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="380" cy="122" r="24" fill="#ffcf3f" />
+  <path d="M101 132h92l-46 82z" fill="#db3328" />
+  <path d="M111 151h72" stroke="#fff" stroke-width="16" stroke-linecap="round" />
+  <path d="M129 181h36" stroke="#fff" stroke-width="16" stroke-linecap="round" />
+</svg>
