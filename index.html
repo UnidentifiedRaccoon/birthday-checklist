@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#1f9d45" />
-    <meta name="description" content="Локальный checklist закупок для дня рождения." />
+    <meta name="description" content="Локальный checklist закупок и план готовки на день рождения." />
     <title>Birthday Checklist</title>
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="icon.svg" type="image/svg+xml" />
@@ -17,7 +17,7 @@
         <div class="title-row">
           <div>
             <h1 id="app-title">Birthday Checklist</h1>
-            <p>15 человек + ребёнок</p>
+            <p id="app-subtitle">15 человек + ребёнок</p>
           </div>
           <div class="header-actions" aria-label="Действия со списком">
             <button class="icon-button danger" id="reset-button" type="button" aria-label="Сбросить отметки">
@@ -38,12 +38,38 @@
 
         <section class="progress-panel" aria-live="polite">
           <div class="progress-meta">
-            <span><strong id="checked-count">0</strong> из <span id="total-count">0</span> куплено</span>
+            <span><strong id="checked-count">0</strong> из <span id="total-count">0</span> <span id="progress-label">куплено</span></span>
             <strong id="progress-percent">0%</strong>
           </div>
           <div class="progress-track" aria-hidden="true">
             <div class="progress-fill" id="progress-fill"></div>
           </div>
+        </section>
+
+        <nav class="mode-switch" aria-label="Раздел приложения" role="tablist">
+          <button class="mode-button active" type="button" data-mode-button="shopping" role="tab" aria-selected="true">
+            Покупки
+          </button>
+          <button class="mode-button" type="button" data-mode-button="cooking" role="tab" aria-selected="false">
+            Готовка
+          </button>
+        </nav>
+
+        <section class="cooking-meta" id="cooking-meta" aria-label="Параметры готовки" hidden>
+          <span class="grill-meta">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M5 8h14" />
+              <path d="m7 8 1.5 6h7L17 8" />
+              <path d="M9 14 7 20" />
+              <path d="m15 14 2 6" />
+              <path d="M8 4c0 1-.8 1.3-.8 2.2" />
+              <path d="M12 3.5c0 1.2-.9 1.6-.9 2.7" />
+              <path d="M16 4c0 1-.8 1.3-.8 2.2" />
+            </svg>
+            Мангал: 1 большой
+          </span>
+          <span class="role-meta role-chip me">Я</span>
+          <span class="role-meta role-chip her">Девушка</span>
         </section>
       </header>
 
@@ -51,7 +77,7 @@
 
       <p class="empty-state" id="empty-state" hidden>Нет позиций для выбранного фильтра.</p>
 
-      <nav class="filter-bar" aria-label="Фильтр списка">
+      <nav class="filter-bar" id="filter-bar" aria-label="Фильтр списка">
         <button class="filter-button active" type="button" data-filter="all">Все</button>
         <button class="filter-button" type="button" data-filter="remaining">Осталось</button>
         <button class="filter-button" type="button" data-filter="done">Куплено</button>

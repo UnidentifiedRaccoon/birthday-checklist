@@ -1,4 +1,4 @@
-const CACHE_NAME = "birthday-checklist-v1";
+const CACHE_NAME = "birthday-checklist-v2";
 const APP_ASSETS = [
   "./",
   "./index.html",

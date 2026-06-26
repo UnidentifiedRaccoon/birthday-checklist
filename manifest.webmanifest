@@ -1,7 +1,7 @@
 {
   "name": "Birthday Checklist",
   "short_name": "Checklist",
-  "description": "Локальный checklist закупок для дня рождения.",
+  "description": "Локальный checklist закупок и план готовки на день рождения.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
