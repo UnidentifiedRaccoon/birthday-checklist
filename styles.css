@@ -353,8 +353,8 @@ button {
 .timeline-item {
   position: relative;
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
-  gap: 12px;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 10px;
   align-items: start;
   padding-bottom: 14px;
 }
@@ -364,7 +364,7 @@ button {
   position: absolute;
   top: 21px;
   bottom: -7px;
-  left: 55px;
+  left: 49px;
   width: 2px;
   border-radius: 999px;
   background: #d9dee2;
@@ -374,7 +374,7 @@ button {
   content: "";
   position: absolute;
   top: 16px;
-  left: 48px;
+  left: 42px;
   width: 16px;
   height: 16px;
   border: 4px solid #e89100;
@@ -480,6 +480,7 @@ button {
 .phase-title,
 .phase-summary {
   display: block;
+  overflow-wrap: break-word;
 }
 
 .phase-title {
@@ -1005,6 +1006,43 @@ button {
     min-height: 48px;
     font-size: 16px;
   }
+
+  .timeline {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .timeline-item::before {
+    left: 43px;
+  }
+
+  .timeline-item::after {
+    left: 36px;
+  }
+
+  .timeline-time strong {
+    font-size: 18px;
+  }
+
+  .timeline-time span {
+    font-size: 14px;
+  }
+
+  .phase-topline {
+    gap: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .phase-details {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
 }
 
 @media (max-width: 360px) {
@@ -1035,6 +1073,30 @@ button {
     grid-template-columns: auto minmax(0, 1fr);
     gap: 10px 12px;
     padding-right: 16px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 7px;
+  }
+
+  .timeline-item::before {
+    left: 39px;
+  }
+
+  .timeline-item::after {
+    left: 32px;
+  }
+
+  .phase-card .checkbox,
+  .phase-card .checkmark {
+    width: 30px;
+    height: 30px;
+  }
+
+  .phase-card .checkmark svg {
+    width: 20px;
+    height: 20px;
   }
 
   .item-qty {
