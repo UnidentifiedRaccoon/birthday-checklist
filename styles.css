@@ -352,74 +352,8 @@ button {
 
 .timeline-item {
   position: relative;
-  display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
-  gap: 10px;
-  align-items: start;
-  padding-bottom: 14px;
-}
-
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  top: 21px;
-  bottom: -7px;
-  left: 49px;
-  width: 2px;
-  border-radius: 999px;
-  background: #d9dee2;
-}
-
-.timeline-item::after {
-  content: "";
-  position: absolute;
-  top: 16px;
-  left: 42px;
-  width: 16px;
-  height: 16px;
-  border: 4px solid #e89100;
-  border-radius: 50%;
-  background: #ffffff;
-  z-index: 1;
-}
-
-.timeline-item.is-done::after {
-  border-color: var(--green);
-  background: var(--green);
-  box-shadow: inset 0 0 0 3px #ffffff;
-}
-
-.timeline-item:last-child::before {
-  display: none;
-}
-
-.timeline-time {
-  padding-top: 6px;
-  text-align: right;
-}
-
-.timeline-time strong,
-.timeline-time span {
   display: block;
-}
-
-.timeline-time strong {
-  color: #171a1e;
-  font-size: 19px;
-  line-height: 1.1;
-  font-weight: 760;
-}
-
-.timeline-time span {
-  margin-top: 4px;
-  color: #e17800;
-  font-size: 15px;
-  line-height: 1.1;
-  font-weight: 720;
-}
-
-.timeline-item.is-done .timeline-time span {
-  color: var(--green);
+  padding-bottom: 12px;
 }
 
 .phase-card {
@@ -475,6 +409,34 @@ button {
   grid-column: 1;
   grid-row: 1;
   min-width: 0;
+}
+
+.phase-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.time-chip {
+  display: inline-flex;
+  min-height: 27px;
+  align-items: center;
+  padding: 5px 9px;
+  border: 1px solid #dbe8df;
+  border-radius: 7px;
+  background: #f1f8f3;
+  color: var(--green);
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.timeline-item.is-done .time-chip {
+  border-color: #c7e5d0;
+  background: #eaf7ee;
 }
 
 .phase-title,
@@ -1012,27 +974,6 @@ button {
     padding-left: 12px;
   }
 
-  .timeline-item {
-    grid-template-columns: 56px minmax(0, 1fr);
-    gap: 8px;
-  }
-
-  .timeline-item::before {
-    left: 43px;
-  }
-
-  .timeline-item::after {
-    left: 36px;
-  }
-
-  .timeline-time strong {
-    font-size: 18px;
-  }
-
-  .timeline-time span {
-    font-size: 14px;
-  }
-
   .phase-topline {
     gap: 8px;
     padding-right: 10px;
@@ -1073,19 +1014,6 @@ button {
     grid-template-columns: auto minmax(0, 1fr);
     gap: 10px 12px;
     padding-right: 16px;
-  }
-
-  .timeline-item {
-    grid-template-columns: 50px minmax(0, 1fr);
-    gap: 7px;
-  }
-
-  .timeline-item::before {
-    left: 39px;
-  }
-
-  .timeline-item::after {
-    left: 32px;
   }
 
   .phase-card .checkbox,

@@ -152,7 +152,6 @@ const COOKING_PHASES = [
   {
     id: "arrival",
     time: "00:00",
-    elapsed: "+0:00",
     title: "Приезд и раскладка",
     roles: ["me", "her", "both"],
     grill: "Подготовка",
@@ -172,7 +171,6 @@ const COOKING_PHASES = [
   {
     id: "coals",
     time: "00:05",
-    elapsed: "+0:05",
     title: "Угли",
     roles: ["me"],
     grill: "Разогрев",
@@ -192,7 +190,6 @@ const COOKING_PHASES = [
   {
     id: "quick-marinades",
     time: "00:10",
-    elapsed: "+0:10",
     title: "Быстрые маринады",
     roles: ["me", "her"],
     grill: "Греется",
@@ -221,7 +218,6 @@ const COOKING_PHASES = [
   {
     id: "veg-sauce-cabbage",
     time: "00:25",
-    elapsed: "+0:25",
     title: "Овощи, салат, соус",
     roles: ["me", "her"],
     grill: "Греется",
@@ -246,7 +242,6 @@ const COOKING_PHASES = [
   {
     id: "potatoes-foil",
     time: "00:35",
-    elapsed: "+0:35",
     title: "Картошка в фольге",
     roles: ["me", "her"],
     grill: "В углях",
@@ -268,7 +263,6 @@ const COOKING_PHASES = [
   {
     id: "legs-grill",
     time: "00:45",
-    elapsed: "+0:45",
     title: "Ножки на мангал",
     roles: ["me"],
     grill: "Занят",
@@ -290,7 +284,6 @@ const COOKING_PHASES = [
   {
     id: "legs-glaze",
     time: "01:20",
-    elapsed: "+1:20",
     title: "Глазурь и отдых ножек",
     roles: ["me", "her"],
     grill: "Финиш",
@@ -312,7 +305,6 @@ const COOKING_PHASES = [
   {
     id: "pork-grill",
     time: "01:35",
-    elapsed: "+1:35",
     title: "Рёбрышки и свинина",
     roles: ["me", "her"],
     grill: "Занят",
@@ -335,7 +327,6 @@ const COOKING_PHASES = [
   {
     id: "veg-mushrooms-grill",
     time: "02:15",
-    elapsed: "+2:15",
     title: "Овощи и грибы",
     roles: ["me", "her"],
     grill: "Занят",
@@ -355,7 +346,6 @@ const COOKING_PHASES = [
   {
     id: "shawarma-chicken",
     time: "02:30",
-    elapsed: "+2:30",
     title: "Курица для шаурмы",
     roles: ["me", "her"],
     grill: "Занят",
@@ -375,7 +365,6 @@ const COOKING_PHASES = [
   {
     id: "shawarma-assembly",
     time: "02:45",
-    elapsed: "+2:45",
     title: "Сборка шаурмы",
     roles: ["me", "her"],
     grill: "Подрумянить",
@@ -397,7 +386,6 @@ const COOKING_PHASES = [
   {
     id: "salad-finish",
     time: "02:55",
-    elapsed: "+2:55",
     title: "Салат и картошка на стол",
     roles: ["me", "her"],
     grill: "Подача",
@@ -419,7 +407,6 @@ const COOKING_PHASES = [
   {
     id: "serving-safety",
     time: "03:05",
-    elapsed: "+3:05",
     title: "Подача и безопасность",
     roles: ["me", "her", "both"],
     grill: "Финиш",
@@ -705,10 +692,6 @@ function createCookingPhase(phase) {
 
   const detailsId = `phase-details-${phase.id}`;
   section.innerHTML = `
-    <div class="timeline-time" aria-hidden="true">
-      <strong>${escapeHtml(phase.time)}</strong>
-      <span>${escapeHtml(phase.elapsed)}</span>
-    </div>
     <article class="phase-card">
       <div class="phase-topline">
         <label class="checkbox phase-checkbox" aria-label="Отметить этап ${escapeAttribute(phase.title)} готовым">
@@ -721,6 +704,9 @@ function createCookingPhase(phase) {
         </label>
         <button class="phase-toggle" type="button" data-phase-toggle="${escapeAttribute(phase.id)}" aria-expanded="${String(expanded)}" aria-controls="${detailsId}">
           <span class="phase-title-block">
+            <span class="phase-meta-row">
+              <span class="time-chip" aria-label="Время от приезда: ${escapeAttribute(phase.time)}">${escapeHtml(phase.time)}</span>
+            </span>
             <span class="phase-title">${escapeHtml(phase.title)}</span>
             <span class="phase-summary">${escapeHtml(phase.summary)}</span>
           </span>
